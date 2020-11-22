@@ -17,7 +17,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'localhost:5001';
+  const ENDPOINT = 'https://chatgroup2020.herokuapp.com/';
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
