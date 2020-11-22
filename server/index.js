@@ -9,7 +9,14 @@ const router = require('./router');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+const io = socketio(server,{
+  cors:{
+    origin: "https://chatgroup2020.herokuapp.com/",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["my-custom-header"],
+    credentials: true
+  }
+});
 io.origins('*:*')
 app.use(cors());
 app.use(router);
